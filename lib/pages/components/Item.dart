@@ -15,7 +15,6 @@ class Item extends StatelessWidget {
             height: 140,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: Colors.red,
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
