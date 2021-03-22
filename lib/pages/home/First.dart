@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:music/component/swiper_component.dart';
 import 'package:music/pages/home/CenterCategory.dart';
+import 'package:music/pages/home/Channel.dart';
 
 class First extends StatefulWidget {
   @override
@@ -10,9 +12,15 @@ class _FirstState extends State<First> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
       child: Column(
         children: <Widget>[
+          Container(
+            height: 180,
+            child: SwiperComponent(),
+          ),
+          Container(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,6 +47,10 @@ class _FirstState extends State<First> {
               ),
             ],
           ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Channel(),
+          )
         ],
       ),
     );

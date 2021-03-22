@@ -7,7 +7,7 @@ class CenterCategory extends StatelessWidget {
   final String title;
 
   const CenterCategory(this.icon,
-      {Key key, this.size = 60, this.bgColor = Colors.white, this.title})
+      {Key key, this.size = 48, this.bgColor = Colors.white, this.title})
       : super(key: key);
 
   @override
