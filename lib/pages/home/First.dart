@@ -47,10 +47,6 @@ class _FirstState extends State<First> {
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Channel(),
-          )
         ],
       ),
     );
