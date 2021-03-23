@@ -367,7 +367,151 @@ class _PlayState extends State<Play> {
                     ),
                     onTap: () {
                       if (_index == list.length - 1) {
-                        // 底部弹出框
+                        showBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              height: MediaQuery.of(context).size.height * 0.6,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(226, 226, 226, 0.2),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    decoration: BoxDecoration(
+                                      border: Border(
+                                        bottom: BorderSide(
+                                          color: Color(0xffafafb1),
+                                          width: 1,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Expanded(
+                                            flex: 4,
+                                            child: Text(
+                                              '共1640集',
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                          ),
+                                          Expanded(
+                                            flex: 5,
+                                            child: Container(
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                                children: <Widget>[
+                                                  Row(
+                                                    children: <Widget>[
+                                                      Icon(
+                                                        Icons.cloud_download_rounded,
+                                                        color: Color(0xff929395),
+                                                        size: 28,
+                                                      ),
+                                                      Container(
+                                                        width: 10,
+                                                      ),
+                                                      Text(
+                                                        '批量下载',
+                                                        style: TextStyle(
+                                                          fontSize: 18,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Container(
+                                                    width: 10,
+                                                  ),
+                                                  Row(
+                                                    children: <Widget>[
+                                                      Icon(
+                                                        Icons.cloud_download_rounded,
+                                                        color: Color(0xff929395),
+                                                        size: 28,
+                                                      ),
+                                                      Container(
+                                                        width: 10,
+                                                      ),
+                                                      Text(
+                                                        '倒叙',
+                                                        style: TextStyle(
+                                                          fontSize: 18,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(16),
+                                      child: ListView.separated(
+                                        separatorBuilder: (context, index) {
+                                          return Divider(
+                                            color: Color(0xffafafb1),
+                                          );
+                                        },
+                                        itemBuilder: (context, index) {
+                                          return ListTile(
+                                            title: Text("${index + 1} : aa"),
+                                          );
+                                        },
+                                        itemCount: 1640,
+                                      ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Container(
+                                      height: 60,
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          top: BorderSide(
+                                            color: Color(0xffafafb1),
+                                            width: 1,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          "关闭",
+                                          style: TextStyle(
+                                            color: Color(0xff1e181a),
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        );
                       } else {
                         setState(() {
                           _index = _index + 1;
