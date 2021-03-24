@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:music/pages/index/Index.dart';
-import 'package:music/pages/play/Play.dart';
-import 'package:music/pages/search/Search.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,8 +13,6 @@ class MyApp extends StatefulWidget {
 var routes = {
   '/': (BuildContext context) => Index(),
   '/app': (BuildContext context) => Index(),
-  '/search': (BuildContext context) => Search(),
-  '/play': (BuildContext context) => Play(),
 };
 
 class _MyAppState extends State<MyApp> {
