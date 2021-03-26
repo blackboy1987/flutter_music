@@ -23,7 +23,7 @@ class _CategoryState extends State<Category> {
     try {
       Dio().get("http://172.16.12.223:9000/init/list",queryParameters: {
         "categoryId":widget.data["id"],
-        "page":page
+        "pageNumber":page
       }).then((response){
         setState(() {
           if(page==1){
@@ -31,7 +31,7 @@ class _CategoryState extends State<Category> {
           }else{
             data.addAll(response.data["data"]);
           }
-
+          page = page+1;
         });
       });
     } catch (e) {

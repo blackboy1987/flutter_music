@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music/pages/play/Play.dart';
 
 class Item extends StatelessWidget {
   var data;
@@ -7,13 +8,21 @@ class Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(20),
-      child: InkWell(
-        onTap: (){
-          print(data["id"]);
+    return Container(
+      padding: EdgeInsets.only(top: 8.0),
+      height: 180.0,
+      child: ListTile(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (BuildContext context) {
+              return Play(
+                novelId: data["id"],
+              );
+            }),
+          );
         },
-        child: Row(
+        title: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
